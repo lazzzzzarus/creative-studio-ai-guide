@@ -1,7 +1,7 @@
 ---
 title: The creative pro's Claude studio: a setup guide
 tier: T2 (free, shareable)
-updated: 2026-11-11
+updated: 2026-11-17
 for: composers, producers, editors, designers and other creative professionals, from first sign-in to a self-maintaining system
 ---
 
@@ -167,6 +167,14 @@ Prefer *event-driven* (run when a file appears) over polling every few minutes. 
 Keep the canonical copy of each job definition in one shared-tooling repo with an install script, so a
 rebuild is one command.
 
+**A rules inbox.** Chat, phone and cloud sessions usually can't edit your rule files directly, and you don't
+want five surfaces editing the most trusted text anyway. Give them a drop folder instead: each writes one small
+proposal file (what to change, where, and why). A local job applies low-risk updates (a map or index row) on its
+own, with a backup and a log line, and holds any change to the house rules themselves until you say "approve".
+
+**Watch the watchers.** Headless jobs that call Claude fail silently when the command-line sign-in expires.
+Have one job check `claude` is still logged in and alert you, instead of finding out a week later.
+
 **Check:** `launchctl list | grep <your-prefix>` (macOS) lists each job, and its log shows a recent run.
 
 ---
@@ -187,6 +195,8 @@ rebuild is one command.
 - **Every project has SECURITY.md**, and a short review checklist runs before anything ships.
 - **Code an AI wrote:** for personal tools, tests plus the review are enough. Before you *sell* or deploy for
   clients, a qualified human reviews it.
+- **When an agent takes over a screen,** show a small always-on-top box saying what it's doing (step n of N)
+  with Pause and Cancel. Only those buttons stop the work, so someone glancing at the screen can't break it by accident.
 - Write all of this down as your own security playbook, and point the house rules at it.
 
 ---
